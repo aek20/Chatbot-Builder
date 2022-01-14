@@ -1,5 +1,6 @@
 import React from 'react'
 import "./chatbotInfo.css";
+import {Link} from 'react-router-dom'
 import {Form,Button} from 'react-bootstrap'
 export default function ChatbotInfo() {
     return (
@@ -16,9 +17,9 @@ export default function ChatbotInfo() {
                     <label for="vehicle1"> Arabic</label><br/>
                         <input type="checkbox" id="vehicle2" name="vehicle2" value="Car" />
                             <label for="vehicle2"> English</label><br/>
-                <Button variant="primary" type="submit">
+                <Link to='./add'>  <Button variant="primary" type="submit">
                     Create
-                </Button>
+                </Button></Link>
             </Form>
         </div>
     )

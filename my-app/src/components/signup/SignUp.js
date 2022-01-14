@@ -1,7 +1,7 @@
 import React from 'react'
-import {Form,Button} from 'react-bootstrap'
+import { Form, Button } from 'react-bootstrap'
 import { Link } from "react-router-dom";
-import './signin.css'
+import './signup.css'
 export default function SignIn() {
     return (
         <div>
@@ -18,17 +18,21 @@ export default function SignIn() {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" placeholder="Password" />
                 </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>Username</Form.Label>
+                    <Form.Control type="password" placeholder="" />
+                </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Link to="/signup">Create New Account</Link>
+         
                     {/* <Form.Check type="checkbox" label="Check me out" /> */}
                 </Form.Group>
-               
-                <Link to="/mainpage"> <Button variant="primary" type="submit" >SUBMIT
+
+                <Link to="/mainpage"> <Button variant="primary" type="submit" >Create
                 </Button></Link>
-               
+
 
             </Form>
-         
+
         </div>
     )
 }

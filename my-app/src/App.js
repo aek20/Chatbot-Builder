@@ -8,6 +8,7 @@ import LandingPage from './components/landingPage/LandingPage'
 import { BrowserRouter,Switch,Route,Link } from "react-router-dom";
 import Add from './components/addMsq/Add'
 import ChatbotInfo from './components/chatbotInfo/ChatbotInfo'
+import Signup from './components/signup/SignUp'
 function App() {
   return (
     <BrowserRouter basename="/">
@@ -32,6 +33,9 @@ function App() {
           </Route>
           <Route path="/chatbot">
             <ChatbotInfo />
+          </Route>
+          <Route path="/signup">
+            <Signup />
           </Route>
         </Switch>
     </div>
