@@ -9,6 +9,7 @@ import { BrowserRouter,Switch,Route,Link } from "react-router-dom";
 import Add from './components/addMsq/Add'
 import ChatbotInfo from './components/chatbotInfo/ChatbotInfo'
 import Signup from './components/signup/SignUp'
+import ChatWindow from './components/chat-window/ChatWindow'
 function App() {
   return (
     <BrowserRouter basename="/">
@@ -36,6 +37,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <Signup />
+          </Route>
+          <Route path="/chatbotwindow">
+            <ChatWindow />
           </Route>
         </Switch>
     </div>
