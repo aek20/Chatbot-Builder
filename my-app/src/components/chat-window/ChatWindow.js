@@ -1,5 +1,8 @@
 import "./chatWindow.css";
 import  ChatItem  from "./Chatbot-item";
+import React from 'react'
+import ReactDOM from 'react-dom'
+
 import { Button } from "react-bootstrap";
 export default function App() {
     return (

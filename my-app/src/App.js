@@ -10,6 +10,10 @@ import Add from './components/addMsq/Add'
 import ChatbotInfo from './components/chatbotInfo/ChatbotInfo'
 import Signup from './components/signup/SignUp'
 import ChatWindow from './components/chat-window/ChatWindow'
+import Dashboard from './components/dashboard/Dashboard'
+import React from 'react'
+import ReactDOM from 'react-dom'
+
 function App() {
   return (
     <BrowserRouter basename="/">
@@ -40,6 +44,9 @@ function App() {
           </Route>
           <Route path="/chatbotwindow">
             <ChatWindow />
+          </Route>
+          <Route path="/dashboard">
+            <Dashboard />
           </Route>
         </Switch>
     </div>
