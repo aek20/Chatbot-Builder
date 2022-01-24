@@ -15,15 +15,15 @@ function createData(time, amount) {
 }
 
 const data = [
-    createData("00:00", 0),
-    createData("03:00", 300),
-    createData("06:00", 600),
-    createData("09:00", 800),
-    createData("12:00", 1500),
-    createData("15:00", 2000),
-    createData("18:00", 2400),
-    createData("21:00", 2400),
-    createData("24:00", undefined)
+    createData("january ", 0),
+    createData("february", 300),
+    createData("march", 600),
+    createData("april", 800),
+    createData("may", 1500),
+    createData("june", 2000),
+    createData("july", 2400),
+    createData("august", 2400),
+    createData("septmber", 2700)
 ];
 
 export default function Chart() {
@@ -43,7 +43,7 @@ export default function Chart() {
                     <XAxis dataKey="time" />
                     <YAxis>
                         <Label angle={270} position="left" style={{ textAnchor: "middle" }}>
-                            Sales ($)
+                       number of questions
                         </Label>
                     </YAxis>
                     <Line type="monotone" dataKey="amount" stroke="#556CD6" dot={false} />
