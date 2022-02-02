@@ -1,6 +1,6 @@
 import React from "react";
 import MaterialTable from "material-table";
-
+import "./inbox.css"
 
 export default function Inbox() {
 
