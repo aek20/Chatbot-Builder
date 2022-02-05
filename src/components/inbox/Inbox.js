@@ -15,7 +15,7 @@ export default function Inbox() {
                 console.log(json)
                 setData(json)
             })
-        console.log("hi nigga")
+  
 
 
     }, [])

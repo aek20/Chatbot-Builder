@@ -8,65 +8,41 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Title from "./Title";
 import {useState,useEffect} from "react"
-// Generate Order Data
-function createData(id, date, name, shipTo, paymentMethod, amount) {
-    return { id, date, name, shipTo, paymentMethod, amount };
-}
-//////
-
-
-
-//////
-    const rows = [
-    createData(
-        0,
-        "16 Mar, 2019",
-        "what is work hours",
-        "answered",
-        "az2933",
-        "from 4pm to 12 pm"
-    ),
-    createData(
-        1,
-        "16 Mar, 2019",
-        "how pay by credit card",
-        "answered",
-        "fsweqeq",
-       "can I change my account email"
-    ),
-    createData(
-        2,
-        "16 Mar, 2019",
-        "if I subscribe to a new service can I get access to all promotion",
-        "not answered",
-        "mohammad1999",
-       "yes you can"
-    ),
-    createData(
-        3,
-        "16 Mar, 2019",
-        "how  change pick up information",
-        "answered",
-        "yasseng",
-        "1- go to >>>>  2- click on >>>>>>>>>>>"
-    ),
-    createData(
-        4,
-        "15 Mar, 2019",
-        "can I change my account email",
-        "answered",
-        "omar2222",
-        "yes you can"
-    )
-];
 
 const useStyles = makeStyles(theme => ({
     seeMore: {
         marginTop: theme.spacing(3)
     }
 }));
-
+// generate order data
+function createData(id, date, name, shipTo, paymentMethod, amount) {
+    return { id, date, name, shipTo, paymentMethod, amount };
+}
 export default function Orders() {
+
+    const [info, setData] = useState([]);
+
+    useEffect(async () => {
+        await fetch('https://jsonplaceholder.typicode.com/users')
+            .then(response => response.json())
+            .then(json => {
+                console.log(json)
+                setData(json)
+            })
+   
+
+
+    }, [])
+
+
+    //////
+    const rows = info.map(item => createData(
+        item.id,
+        item.id,
+  item.email,
+        "answered",
+        item.username,
+       item.address.street))
     const classes = useStyles();
     return (
         <React.Fragment>

@@ -14,7 +14,7 @@ import Dashboard from './components/dashboard/Dashboard'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Inbox from './components/inbox/Inbox.js'
-import UseEffect from './testCom/useEffect';
+
 function App() {
   return (
     <BrowserRouter basename="/">
@@ -52,9 +52,7 @@ function App() {
           <Route path="/dashboard">
             <Dashboard />
           </Route>
-          <Route path="/effect">
-            <UseEffect />
-          </Route>
+    
         </Switch>
     </div>
 
