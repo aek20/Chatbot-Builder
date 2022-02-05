@@ -1,16 +1,27 @@
 import React from "react";
 import MaterialTable from "material-table";
 import "./inbox.css"
-
+import { useState, useEffect } from "react";
 export default function Inbox() {
 
-const data=[
 
-    {Name:"ahmed " , Email:"ahmed@gmail.com", Question:"hello? " , Date:"1/24/2022"},
-    {Name:"khlid" , Email:"khild@gmail.com", Question:" can i get help? " , Date:"4/1/2022"},
-    {Name:"ali" , Email:"ali@gmail.com", Question:"where is my dlivery?  " , Date:"5/1/2022"}
-]
+    //
+    const [info, setData] = useState([]);
 
+    useEffect(async () => {
+        await fetch('https://jsonplaceholder.typicode.com/users')
+            .then(response => response.json())
+            .then(json => {
+                console.log(json)
+                setData(json)
+            })
+        console.log("hi nigga")
+
+
+    }, [])
+const data= info.map(item => (
+    { Name: item.name, Email: item.email, Question: item.username , Date:item.id}  ))
+    
 const columns =[
 
     {
