@@ -1,11 +1,10 @@
-
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Button, Col} from 'react-bootstrap'
 import Navbar from './components/navbar/Navbar'
 import SignIn from './components/signin/SignIn'
 import LandingPage from './components/landingPage/LandingPage'
-import { BrowserRouter,Switch,Route,Link } from "react-router-dom";
+import { BrowserRouter,Link } from "react-router-dom";
 import Add from './components/addMsq/Add'
 import ChatbotInfo from './components/chatbotInfo/ChatbotInfo'
 import Signup from './components/signup/SignUp'
@@ -14,6 +13,8 @@ import Dashboard from './components/dashboard/Dashboard'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Inbox from './components/inbox/Inbox.js'
+import Reset from "./components/resetPass/Reset.js"
+import { BrowserRouter as Router, Route ,Routes} from "react-router-dom";
 
 function App() {
   return (
@@ -26,34 +27,33 @@ function App() {
 
 
 {/* link between pages */}
-        <Switch>
-          <Route path="/mainpage">
-            <LandingPage />
+        <Routes>
+          <Route path="/mainpage" element={<LandingPage />}>
+         
           </Route>
-          <Route path="/inbox">
-            <Inbox />
+          <Route path="/inbox" element={<Inbox />}>
+           
           </Route>
-          <Route path="/signin">
-            <SignIn />
-          </Route>
+          <Route path="/signin" element ={<SignIn />} />
+          
         
-          <Route path="/add">
-        <Add />
+       <Route path="/add" element={<Add />}>
+     
           </Route>
-          <Route path="/chatbot">
-            <ChatbotInfo />
+          <Route path="/chatbot" element={<ChatbotInfo />} />
+
+       
+          <Route path="/signup" element ={<Signup />}>
+
           </Route>
-          <Route path="/signup">
-            <Signup />
+          <Route path="/chatbotwindow" element={<ChatWindow />}> 
+       
           </Route>
-          <Route path="/chatbotwindow">
-            <ChatWindow />
-          </Route>
-          <Route path="/dashboard">
-            <Dashboard />
-          </Route>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/reset" element={<Reset />} />
     
-        </Switch>
+    
+        </Routes>
     </div>
 
     </BrowserRouter>
