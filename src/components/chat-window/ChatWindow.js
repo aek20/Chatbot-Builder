@@ -1,36 +1,45 @@
-import "./chatWindow.css";
-import  ChatItem  from "./Chatbot-item";
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React, { Component } from 'react'
+import { Launcher } from 'react-chat-window'
 
-import { Button } from "react-bootstrap";
-export default function App() {
-    return (
-        <div style={{ marginLeft: 400, marginTop: 30 }}>
-            <div
-                style={{
-                    border: "1px solid black",
-                    width: 320,
-                    height: 400,
-                    overflowY: "scroll",
-                    overflowX: "hidden"
-        
+class Demo extends Component {
+
+    constructor() {
+        super();
+        this.state = {
+            messageList: []
+        };
+    }
+
+    _onMessageWasSent(message) {
+        this.setState({
+            messageList: [...this.state.messageList, message]
+        })
+    }
+
+    _sendMessage(text) {
+        if (text.length > 0) {
+            this.setState({
+                messageList: [...this.state.messageList, {
+                    author: 'them',
+                    type: 'text',
+                    data: { text }
+                }]
+            })
+        }
+    }
+
+    render() {
+        return (<div>
+            <Launcher
+                agentProfile={{
+                    teamName: 'react-chat-window',
+                    imageUrl: 'https://a.slack-edge.com/66f9/img/avatars-teams/ava_0001-34.png'
                 }}
-                className="App"
-            >
-                <ChatItem position={"right"} color={"lightblue"} />
-                <ChatItem position={"left"} color={"#ffb3b3"} />
-                <ChatItem  position={"right"} color={"lightblue"} />
-                <ChatItem  position={"left"} color={"#ffb3b3"} />
-                <ChatItem position={"right"} color={"lightblue"} />
-                <ChatItem  position={"left"} color={"#ffb3b3"} />
-                <ChatItem position={"right"} color={"lightblue"} />
-                <ChatItem  position={"left"} color={"#ffb3b3"} />
-                <ChatItem  position={"right"} color={"lightblue"} />
-            </div>
-            <input type="text" />
-            <Button variant="warning">Send</Button>
-
-        </div>
-    );
+                onMessageWasSent={this._onMessageWasSent.bind(this)}
+                messageList={this.state.messageList}
+                showEmoji
+            />
+        </div>)
+    }
 }
+export default Demo
