@@ -9,15 +9,19 @@ class Demo extends Component {
             messageList: []
         };
     }
-
+  
     _onMessageWasSent(message) {
+        sendToServer(message);
         this.setState({
             messageList: [...this.state.messageList, message]
         })
     }
 
+   
+
     _sendMessage(text) {
         if (text.length > 0) {
+           
             this.setState({
                 messageList: [...this.state.messageList, {
                     author: 'them',
@@ -25,6 +29,7 @@ class Demo extends Component {
                     data: { text }
                 }]
             })
+       
         }
     }
 
@@ -41,5 +46,22 @@ class Demo extends Component {
             />
         </div>)
     }
+}
+const sendToServer=(message)=> {
+    console.log(message)
+   
+    fetch("http://localhost:3906/add", {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+
+            data: message
+
+
+
+        })
+    })
 }
 export default Demo

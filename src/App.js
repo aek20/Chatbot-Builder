@@ -14,6 +14,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Inbox from './components/inbox/Inbox.js'
 import Reset from "./components/resetPass/Reset.js"
+import TestAuth from "../src/components/testAuth/TestAuth.js"
 import { BrowserRouter as Router, Route ,Routes} from "react-router-dom";
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
           <Route path="/chatbotwindow" element={<ChatWindow />}> 
        
           </Route>
+          <Route path="/test" element={<TestAuth />} />  
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/reset" element={<Reset />} />
     
