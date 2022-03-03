@@ -50,14 +50,17 @@ class Demo extends Component {
 const sendToServer=(message)=> {
     console.log(message)
    
-    fetch("http://localhost:3906/add", {
+    fetch("http://localhost:3910/add/messages", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
 
-            data: message
+            data: message.data.text,
+            author:message.author
+            ,type:message.type
+
 
 
 
