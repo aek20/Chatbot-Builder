@@ -15,6 +15,7 @@ import ReactDOM from 'react-dom'
 import Inbox from './components/inbox/Inbox.js'
 import Reset from "./components/resetPass/Reset.js"
 import TestAuth from "../src/components/testAuth/TestAuth.js"
+import ProtectedRoute from "../src/components/protectedRoute/ProtectedRoute.js"
 import { BrowserRouter as Router, Route ,Routes} from "react-router-dom";
 
 function App() {
@@ -51,7 +52,15 @@ function App() {
        
           </Route>
           <Route path="/test" element={<TestAuth />} />  
-          <Route path="/dashboard" element={<Dashboard />} />
+       
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute user={false}>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
           <Route path="/reset" element={<Reset />} />
     
     
