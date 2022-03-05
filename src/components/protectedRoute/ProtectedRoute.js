@@ -1,15 +1,19 @@
 import React from 'react'
 import { Route,Navigate } from 'react-router-dom'
-import auth from '../auth/auth.js'
+import auth2 from '../auth/auth.js'
+import {auth,check} from "../../firebase/firebase.js"
+
+
 const ProtectedRoute = ({
-    user,
+
     redirectPath = '/signin',
     children,
 }) => {
-    if (!auth.isAuthenticated()) {
-        return <Navigate to={redirectPath} replace />;
-    }
 
-    return children;
+    if (!check()) {
+return <Navigate to={redirectPath} replace />;   
+    }
+else{
+    return children;}
 };
 export default ProtectedRoute

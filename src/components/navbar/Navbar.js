@@ -10,7 +10,7 @@ const Navbar = () => {
                 <a className="active" href="#home">Home</a>
                 <a href="#news">News</a>
                 <a href="#contact">Contact</a>
-                <a href="#about">About</a>
+                <a href="/dashboard">Dashboard</a>
                 <a href="/mainpage" onClick={() =>logout()}> signout </a>
             </div>
         </div>

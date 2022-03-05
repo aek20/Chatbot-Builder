@@ -33,7 +33,8 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+const auth = getAuth();
+const currentUser = auth.currentUser
 const db = getFirestore(app);
 const googleProvider = new GoogleAuthProvider();
 const signInWithGoogle = async () => {
@@ -92,6 +93,24 @@ const logout = () => {
 
 
 };
+let currUser = false
+const check =()=>{
+   
+    auth.onAuthStateChanged(function (user) {
+        if (user) {
+            // User is signed in.
+        console.log("good")
+            currUser=true
+       
+        } else {
+            // No user is signed in.
+         currUser = false  
+             console.log("bad")
+        }
+    });
+    return currUser
+    }
+
 export {
     auth,
     db,
@@ -99,5 +118,5 @@ export {
     logInWithEmailAndPassword,
     registerWithEmailAndPassword,
     sendPasswordReset,
-    logout,
+    logout, check
 };
