@@ -17,14 +17,21 @@ import Reset from "./components/resetPass/Reset.js"
 import TestAuth from "../src/components/testAuth/TestAuth.js"
 import ProtectedRoute from "../src/components/protectedRoute/ProtectedRoute.js"
 import { BrowserRouter as Router, Route ,Routes} from "react-router-dom";
-
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth ,signin,userState } from "../src/firebase/firebase.js";
+import {useState} from "react"
 function App() {
+//  const [auth1,setAuth] =useState(false)
+//    changeAuth=(auth)=>{
+
+//  }
+
   return (
     <BrowserRouter basename="/">
     
   <div>
     
-<Navbar />
+<Navbar   />
 
 
 
@@ -36,7 +43,7 @@ function App() {
           <Route path="/inbox" element={<Inbox />}>
            
           </Route>
-          <Route path="/signin" element ={<SignIn />} />
+          <Route path="/signin" element={<SignIn />}   />
           
         
        <Route path="/add" element={<Add />}>
@@ -56,7 +63,7 @@ function App() {
           <Route
             path="/dashboard"
             element={
-              <ProtectedRoute >
+              <ProtectedRoute user={true} >
                 <Dashboard />
               </ProtectedRoute>
             }

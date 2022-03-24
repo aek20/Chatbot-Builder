@@ -17,6 +17,7 @@ import {
     addDoc,
 } from "firebase/firestore";
 import dotenv from "dotenv";
+import { useState } from "react";
 dotenv.config()
 const firebaseConfig = {
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -28,14 +29,13 @@ const firebaseConfig = {
     measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENTID
 };
 
-
- 
-
+let signin=false
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const currentUser = auth.currentUser
 const db = getFirestore(app);
+let userState = false
 const googleProvider = new GoogleAuthProvider();
 const signInWithGoogle = async () => {
     try {
@@ -49,8 +49,11 @@ const signInWithGoogle = async () => {
                 name: user.displayName,
                 authProvider: "google",
                 email: user.email,
-            });
+            }
+          );
+          
         }
+   userState=true
     } catch (err) {
         console.error(err);
         alert(err.message);
@@ -59,6 +62,7 @@ const signInWithGoogle = async () => {
 const logInWithEmailAndPassword = async (email, password) => {
     try {
         await signInWithEmailAndPassword(auth, email, password);
+    
     } catch (err) {
         console.error(err);
         alert(err.message);
@@ -93,30 +97,34 @@ const logout = () => {
 
 
 };
-let currUser = false
-const check =()=>{
-   
-    auth.onAuthStateChanged(function (user) {
-        if (user) {
-            // User is signed in.
-        console.log("good")
-            currUser=true
+
+//    const check= ()=>{ auth.onAuthStateChanged(function (user) {
+//         if (user) {
+//             // User is signed in.
+          
+//         console.log("sign in")
+          
        
-        } else {
-            // No user is signed in.
-         currUser = false  
-             console.log("bad")
-        }
-    });
-    return currUser
-    }
+//         } else {
+//             // No user is signed in.
+      
+//             console.log("no sign in")
+//             signin = false
+           
+//         }
+//     });
+// }
+
+    
 
 export {
     auth,
+    userState,
     db,
     signInWithGoogle,
     logInWithEmailAndPassword,
     registerWithEmailAndPassword,
     sendPasswordReset,
-    logout, check
+    logout
+    
 };
