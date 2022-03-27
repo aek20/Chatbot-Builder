@@ -1,17 +1,26 @@
-import React from 'react'
-import { Route, Navigate } from 'react-router-dom'
-import auth2 from '../auth/auth.js'
-import { auth, check, userState } from "../../firebase/firebase.js"
+import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-import { useAuthState } from "react-firebase-hooks/auth";
-const ProtectedRoute = ({ user, children }) => {
-    if (!user) {
+export default function ProtectedRoute({children}) {
+    let navigate = useNavigate();
+    useEffect(() => {
+        let authToken = sessionStorage.getItem('Auth Token')
+
+        if (authToken) {
+            navigate('/dashboard')
+        }
+
+        if (!authToken) {
+            navigate('/signin')
+        }
+
     
-        return <Navigate to="/signin" replace />;
-    }
-   
-    return children;
-};
+    }, [])
+    return (
+        <div>
+            Home Page
+        </div>
+    )
+}
 
 
-export default ProtectedRoute

@@ -53,6 +53,7 @@ const signInWithGoogle = async () => {
           );
           
         }
+        sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
    userState=true
     } catch (err) {
         console.error(err);
