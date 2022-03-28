@@ -13,7 +13,9 @@ const Navbar = () => {
                 <a href="/dashboard" >Dashboard</a>
                 <a href="/mainpage" onClick={() =>{
                     logout()
-                }}> signout </a>
+                    
+                }}> signout 
+                </a>
             </div>
         </div>
     );
