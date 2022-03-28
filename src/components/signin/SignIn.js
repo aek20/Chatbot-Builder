@@ -44,7 +44,16 @@ function Login() {
                 >
                     Login
                 </button>
-                <button className="login__btn login__google" onClick={signInWithGoogle}>
+                <button className="login__btn login__google" onClick={()=>{
+                    signInWithGoogle()
+                       
+
+   sessionStorage.setItem('Auth Token',"true" )
+                            // response._tokenResponse.refreshToken
+
+                     
+                    }
+                    }>
                     Login with Google
                 </button>
                 <div>

@@ -37,6 +37,7 @@ const currentUser = auth.currentUser
 const db = getFirestore(app);
 let userState = false
 const googleProvider = new GoogleAuthProvider();
+
 const signInWithGoogle = async () => {
     try {
         const res = await signInWithPopup(auth, googleProvider);
@@ -50,19 +51,23 @@ const signInWithGoogle = async () => {
                 authProvider: "google",
                 email: user.email,
             }
-          );
+            )
           
         }
-        sessionStorage.setItem('Auth Token', response._tokenResponse.refreshToken)
+      
    userState=true
     } catch (err) {
         console.error(err);
         alert(err.message);
     }
-};
+}
 const logInWithEmailAndPassword = async (email, password) => {
     try {
-        await signInWithEmailAndPassword(auth, email, password);
+        await signInWithEmailAndPassword(auth, email, password).then((response) => {
+
+            sessionStorage.setItem('Auth Token', "true")
+
+        });
     
     } catch (err) {
         console.error(err);
@@ -94,6 +99,7 @@ const sendPasswordReset = async (email) => {
     }
 };
 const logout = () => {
+    sessionStorage.setItem('Auth Token', "false")
     signOut(auth);
 
 
