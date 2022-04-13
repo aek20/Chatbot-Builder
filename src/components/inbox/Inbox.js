@@ -8,7 +8,8 @@ export default function Inbox() {
     //
     const [info, setData] = useState([]);
 
-    useEffect(async () => {
+    useEffect(async() => {
+
         await fetch('https://jsonplaceholder.typicode.com/users')
             .then(response => response.json())
             .then(json => {

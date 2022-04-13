@@ -1,47 +1,14 @@
-.question{
+.button{
 
-  margin: auto;
+  border-radius: 40;
+  margin-left: 20px;
+   align-content: flex-start;
+}
+.buttons{
+  margin-left:35%;
   margin-top: 10%;
-  width: 50%;
-  border: 3px solid green;
-  padding: 10px;
+ display: flex;
 }
-.addQuis{
-     margin: auto;
-     margin-bottom: -7%;
-  margin-top: 10%;
-  width: 50%;
-  font-size:2rem;
-  padding: 10px;
-}
-.answer{ 
-      margin: auto;
-
-  width: 50%;
-  border: 3px solid green;
-  padding: 10px;
-}
-.answer-text{
-     margin: auto;
-     margin-bottom: 1%;
-  margin-top: 3%;
-  width: 50%;
-  font-size:2rem;
-  padding: 10px;
-}
-.add-button{
-     margin-left:45% ;
-     margin-top:4%;
- 
-
-  border: 3px solid green;
-  padding: 10px; 
-}
-
-.add-label{
-     margin-left:42% ;
-     margin-top:4%;
- 
-
-
+.mb-3{width:40%;
+margin-left:30%;
 }

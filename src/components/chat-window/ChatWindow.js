@@ -43,14 +43,18 @@ class Demo extends Component {
                 onMessageWasSent={this._onMessageWasSent.bind(this)}
                 messageList={this.state.messageList}
                 showEmoji
+                
             />
-        </div>)
+            {/* <div id="rasa-chat-widget" data-websocket-url="https://your-rasa-url-here/"></div> */}
+
+        </div>
+        )
     }
 }
 const sendToServer=(message)=> {
     console.log(message)
    
-    fetch("http://localhost:3910/add/messages", {
+    fetch("http://localhost:4143/add", {
         method: "POST",
         headers: {
             'Content-Type': 'application/json'

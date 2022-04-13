@@ -15,11 +15,15 @@ import ReactDOM from 'react-dom'
 import Inbox from './components/inbox/Inbox.js'
 import Reset from "./components/resetPass/Reset.js"
 import TestAuth from "../src/components/testAuth/TestAuth.js"
+import AddTest from './components/AddTest/AddTest.jsx'
 import ProtectedRoute from "../src/components/protectedRoute/ProtectedRoute.js"
 import { BrowserRouter as Router, Route ,Routes} from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth ,signin,userState } from "../src/firebase/firebase.js";
+import AddNewChatbot from './components/addNewChatbot/Add.js'
+import Navbar2 from "./components/navbar/navbarr.js"
 import {useState} from "react"
+
 function App() {
 //  const [auth1,setAuth] =useState(false)
 //    changeAuth=(auth)=>{
@@ -31,7 +35,7 @@ function App() {
     
   <div>
     
-<Navbar   />
+        <Navbar  />
 
 
 
@@ -46,8 +50,14 @@ function App() {
           <Route path="/signin" element={<SignIn />}   />
           
         
-       <Route path="/add" element={<Add />}>
-     
+          <Route path="/add" element={<Add />}>
+
+          </Route>
+          <Route path="/addtest" element={<AddTest />}>
+
+          </Route>
+          <Route path="/newchatbot" element={<AddNewChatbot />}>
+
           </Route>
           <Route path="/chatbot" element={<ChatbotInfo />} />
 

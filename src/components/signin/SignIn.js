@@ -7,7 +7,7 @@ function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [user, loading, error] = useAuthState(auth);
-    const state =false
+    const state =false       
     const navigate = useNavigate();
     useEffect(() => {
         if (loading) {
@@ -16,7 +16,7 @@ function Login() {
         }
         if (user){
       
-            navigate("/dashboard")
+            navigate("/add")
       
     }
 

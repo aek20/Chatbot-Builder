@@ -19,32 +19,31 @@ function createData(id, date, name, shipTo, paymentMethod, amount) {
     return { id, date, name, shipTo, paymentMethod, amount };
 }
 export default function Orders() {
-
-    const [info, setData] = useState([]);
-
+let arrData=[""]
+    const [info, setData] = useState([{}]);
+const [questions ,setQuestions]=([])
     useEffect(async () => {
-        await fetch('https://jsonplaceholder.typicode.com/users')
-            .then(response => response.json())
+        fetch("http://localhost:4152/show").then(response => response.json())
             .then(json => {
-                console.log(json)
+                console.log(json.questions.intents)
+              
                 setData(json)
+         
+             
             })
+        },[])
+
+
+    // //////
+    // const rows = info.map(item => createData(
+    //     item.chatbotname,
+    //     item.email
+    //  ))
    
-
-
-    }, [])
-
-
-    //////
-    const rows = info.map(item => createData(
-        item.id,
-        item.id,
-  item.email,
-        "answered",
-        item.username,
-       item.address.street))
+      
     const classes = useStyles();
     return (
+
         <React.Fragment>
             <Title>Recent Questions</Title>
             <Table size="small">
@@ -58,15 +57,21 @@ export default function Orders() {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {rows.map(row => (
-                        <TableRow key={row.id}>
-                            <TableCell>{row.date}</TableCell>
-                            <TableCell>{row.name}</TableCell>
-                            <TableCell>{row.shipTo}</TableCell>
-                            <TableCell>{row.paymentMethod}</TableCell>
-                            <TableCell align="right">{row.amount}</TableCell>
-                        </TableRow>
-                    ))}
+               
+                        <TableRow key={info.id}>
+                            <TableCell>{info.chatbotname}</TableCell>
+                          <TableCell>{info.email}</TableCell>
+                          
+                        
+                        {/* <TableCell>{info.questions.stories}</TableCell>  */}
+                
+                       
+                       
+                        {/* {info.questions.map(row => (<TableCell>{row}</TableCell>))}  */}
+                            {/* <TableCell>{row.paymentMethod}</TableCell>
+                            <TableCell align="right">{row.amount}</TableCell>  */} 
+                        </TableRow> 
+                   
                 </TableBody>
             </Table>
             <div className={classes.seeMore}>
