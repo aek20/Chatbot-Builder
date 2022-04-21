@@ -47,7 +47,7 @@ const Add = () => {
                 chatbotname: chatbotname,
                 question: question,
                 answer: answer,
-                keyword: keyword
+ 
 
 
             })

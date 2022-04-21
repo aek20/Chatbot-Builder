@@ -1,6 +1,6 @@
 import React from 'react';
 // import { Container, Nav, NavDropdown} from 'react-bootstrap'
-import './navbar.css'
+import './navbar2.css'
 import { logout,useState} from '../../firebase/firebase.js';
 const Navbar = () => {
     return (
