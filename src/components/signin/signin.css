@@ -1,0 +1,74 @@
+body{
+  background-color: #00092C;
+}
+.login {
+  height: 100vh;
+  width: 100vw;
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+.login__container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: white;
+  padding: 30px;
+   margin-right:16%;
+   border-radius:30px;
+   background-color: #F9EBC8;
+  
+}
+.login__textBox {
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  border-color: #F9EBC8;
+ 
+
+}
+.login__btn {
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  background-color: #E04D01;
+}
+.login__google {
+  background-color: #A97155;
+  margin-top: 3px;
+}
+.login div {
+  margin-top: 7px;
+}
+
+/* Form {
+  margin: auto;
+  width: 50%;
+  border: 3px ;
+  padding: 10px;
+} */
+
+.chatbotbc{
+margin-left:60%;
+margin-top:-50%;
+width: 30%;
+}
+
+.chatbotimg{
+  width :20%;
+  height :20%;
+  margin-top: -50%;
+}
+.secchatbotimg{
+  width :20%;
+   height :20%;
+margin-left: 54%;
+margin-top: -47%;
+  }
