@@ -12,9 +12,9 @@ import {useNavigate} from 'react-router-dom'
         return (
             <div className="landingpagebody">
               
-             <div className="main-image">
+             {/* <div className="main-image">
                     <iframe width="560" height="315" src="https://www.youtube.com/watch?v=gP_fj5lChGA" frameborder="0" allowfullscreen></iframe>
-              </div>
+              </div> */}
                     <div className="main-content">
                   
                         <h1 > chatbot builders </h1>
