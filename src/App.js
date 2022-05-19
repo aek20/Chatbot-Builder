@@ -13,7 +13,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import Inbox from './components/inbox/Inbox.js'
 import Reset from "./components/resetPass/Reset.js"
-
+import Loading from './components/loading/Loading.js'
 import ProtectedRoute from "../src/components/protectedRoute/ProtectedRoute.js"
 import { BrowserRouter as Router, Route ,Routes} from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -38,9 +38,12 @@ function App() {
 
 {/* link between pages */}
         <Routes>
-          <Route path="/mainpage" element={<LandingPage />}>
+          <Route path="/" element={<LandingPage />}>
          
           </Route>
+          <Route path="/loading" element={<Loading />} />
+
+          
           <Route path="/inbox" element={<Inbox />}>
            
           </Route>
@@ -67,9 +70,9 @@ function App() {
           <Route
             path="/dashboard"
             element={
-              <ProtectedRoute user={true} >
+            
                 <Dashboard />
-              </ProtectedRoute>
+          
             }
           />
           <Route path="/reset" element={<Reset />} />

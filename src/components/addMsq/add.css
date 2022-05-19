@@ -3,11 +3,13 @@
   border-radius: 40;
   margin-left: 20px;
    align-content: flex-start;
+  
 }
 .buttons{
   margin-left:35%;
   margin-top: 10%;
  display: flex;
+
 }
 .mb-3{width:40%;
 margin-left:30%;
@@ -18,4 +20,22 @@ margin-left:30%;
 }
 .input{
   border-radius: 13px;
+  height:180%;
+  
+}
+.text{
+  font-size:20px;
+  margin-left:38%;
+}
+.first-text {
+  font-size: 20px;
+  margin-left: 34%;
+}
+Button{
+  width:160%;
+  height:110%;
+margin-left:150%;
+}
+.train{
+  margin-left:250%;
 }

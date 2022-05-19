@@ -1,5 +1,5 @@
 body {
-  background-image: url('../../img/website-banner.jpg');
+  background-image: url('../../img/banner-bg.svg');
 
   background-size: cover;
 }
@@ -67,6 +67,7 @@ a {
 
 .landingpagebody {
   margin: 0;
+  margin-top:140px;
   font-size: var(--fs-400);
   font-weight: 400;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -80,6 +81,7 @@ a {
 .container {
   max-width: 180rem;
   margin: 0 auto;
+  margin-top: -2%;
   padding: 0 3rem;
 }
 
@@ -101,6 +103,7 @@ a {
   align-items: center;
   justify-content: center;
   font-weight: 500;
+  
   white-space: nowrap;
   cursor: pointer;
 }
@@ -123,7 +126,8 @@ a {
           ===========  */
 
 nav {
-  font-size: 20px;
+  font-size: 18px;
+  font-family: "Helvetica Neue";
   width: 85%;
   margin: auto;
   padding: 35px 0;
@@ -142,8 +146,11 @@ li {
 .primary-nav,
 .login-nav {
   display: none;
+  
 }
-
+.primary-nav{
+  margin-left:483px;
+}
 .logo,
 .primary-nav,
 .login-nav,
@@ -225,6 +232,7 @@ main {
 .main-button {
   opacity: 0;
   animation: returnToOrigin 0.5s ease-out forwards;
+
 }
 
 .main-content h1,
@@ -237,6 +245,9 @@ main {
   opacity: 0;
   transform: scale(1.1);
   animation-delay: 1s;
+  margin-left:50%;
+  margin-top:-16.5%;
+  margin-left: 55%;
 }
 
 .main-content h1 {
@@ -453,3 +464,16 @@ footer {
   overflow: hidden;
 }
 
+.logoimge{
+  width:250px;
+  height:100px;
+  margin-left:0%;
+  
+}
+
+.profile-container{
+  margin-left:4%;
+}
+.profile{
+  margin-left:10px;
+}

@@ -23,15 +23,28 @@ let arrData=[""]
     const [info, setData] = useState([{}]);
 const [questions ,setQuestions]=([])
     useEffect(async () => {
-        fetch("http://localhost:4152/show").then(response => response.json())
-            .then(json => {
-                console.log(json.questions.intents)
-              
-                setData(json)
-         
-             
-            })
-        },[])
+try{
+    await fetch('http://localhost:4053/show/dashboard', {
+        method: "GET",
+        headers: {
+            "Access-Control-Allow-Origin": "*",
+            "Content-Type": "application/json"
+        }
+    })
+        .then(response => response.json())
+        .then(json => {
+            console.log(json)
+            console.log('hi')
+            setData(json);
+        })
+} catch(err){
+console.log(err)
+}
+  
+
+
+
+    }, [])
 
 
     // //////
@@ -58,9 +71,9 @@ const [questions ,setQuestions]=([])
                 </TableHead>
                 <TableBody>
                
-                        <TableRow key={info.id}>
-                            <TableCell>{info.chatbotname}</TableCell>
-                          <TableCell>{info.email}</TableCell>
+                        <TableRow key={info}>
+                            <TableCell>{info}</TableCell>
+                          {/* <TableCell>{info.email}</TableCell> */}
                           
                         
                         {/* <TableCell>{info.questions.stories}</TableCell>  */}

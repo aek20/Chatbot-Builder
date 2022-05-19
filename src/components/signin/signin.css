@@ -9,6 +9,7 @@ body{
   align-items: center;
   justify-content: center;
   
+  
 }
 .login__container {
   display: flex;
@@ -16,9 +17,9 @@ body{
   text-align: center;
   background-color: white;
   padding: 30px;
-   margin-right:16%;
-   border-radius:30px;
-   background-color: #F9EBC8;
+   margin-right:10%;
+   border-radius:4px;
+  
   
 }
 .login__textBox {
